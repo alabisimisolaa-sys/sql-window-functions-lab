@@ -1,0 +1,4 @@
+SELECT Region, Name, Population, 
+RANK() OVER(partition by Region ORDER BY Population DESC) as 'Ranked' 
+FROM world.country 
+ORDER BY Region, Ranked;
