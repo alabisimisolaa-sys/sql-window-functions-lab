@@ -1,0 +1,3 @@
+SELECT Name, Population, 
+SUM(Population) OVER (partition by Region ORDER BY Population) as 'Running Total' 
+FROM world.country;
